@@ -15,8 +15,8 @@
     class="ms-5 md:ms-20 mb-10 flex flex-row gap-10 max-w-6xl overflow-x-scroll scrollbar scrollbar-thumb-secondary-2 scrollbar-track-blue-100">
         <div v-for="item in 7">
           
-          <div class="w-80 p-5 m-5 h-80 bg-white shadow-lg shadow-primary-300/50">
-               <p class=""><Icon name="icon-park:quote" class="text-2xl"/>Discover how Maina Makome & Company Advocates delivers strategic legal solutions with integrity, precision, and proven results. discover how Maina Makome & Company Advocates delivers strategic legal solutions with integrity, precision, and proven results<Icon name="icon-park:quote" class="text-2xl scale-y-[-1] scale-x-[-1]"/></p>
+          <div class="w-80 p-5 m-5 bg-white shadow-lg shadow-primary-300/50">
+               <p class=""><Icon name="icon-park:quote" class="text-2xl"/>Maina Makome & Company Advocates has been an invaluable legal partner to our organization. Their professionalism, responsiveness, and deep understanding of commercial and regulatory matters consistently give us confidence in every decision we make. Their team goes above and beyond to protect our interests, and we highly recommend their services.<Icon name="icon-park:quote" class="text-2xl scale-y-[-1] scale-x-[-1]"/></p>
               <div class="p-3">
                 <span class="font-bold text-primary">Vincent Kuria</span>
                 <h2 class="w-full text-sm line-clamp-2">CEO - Vinteque Software Developers</h2>

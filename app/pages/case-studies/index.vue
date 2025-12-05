@@ -3,6 +3,7 @@
 
     <div class="mx-10 md:mx-20 mb-10">
       <h1 class="font-bold font-serif text-4xl my-10 text-primary max-w-3xl">Our Case Studies</h1>
+      <p>See how our expertise delivers real impact. Our case studies highlight the strategies, advocacy, and results that define Maina Makome & Company Advocates across diverse legal matters.</p>
     </div>
     <div class="flex flex-wrap justify-center ">
       <div v-for="item in 5">
