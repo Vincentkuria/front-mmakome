@@ -147,28 +147,28 @@ const ourTeam=ref([
   {
     src:'maina makome.jpg',
     name:'Geoffrey Maina',
-    role:'Managing Partner'
+    role:'Managing Partner',
   },
   {
-    src:'maina makome.jpg',
-    name:'Geoffrey Maina',
-    role:'Managing Partner'
+    src:'employee1.jpg',
+    name:'Luke Mukathe',
+    role:'Advocate',
   },
   {
-    src:'maina makome.jpg',
-    name:'Geoffrey Maina',
-    role:'Managing Partner'
+    src:'employee3.jpg',
+    name:'Raphael Nga`nga',
+    role:'Advocate',
   },
   {
-    src:'maina makome.jpg',
-    name:'Geoffrey Maina',
-    role:'Managing Partner'
+    src:'employee2.jpg',
+    name:'Patrick Malusi',
+    role:'Advocate',
   },
   {
-    src:'maina makome.jpg',
-    name:'Geoffrey Maina',
-    role:'Managing Partner'
-  }
+    src:'secretary.jpg',
+    name:'Linet Maina',
+    role:'Advocate',
+  },
 ])
 
 

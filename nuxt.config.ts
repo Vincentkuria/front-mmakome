@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
+import Aura from '@primeuix/themes/aura';
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -20,7 +21,19 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@vueuse/nuxt',
     '@vee-validate/nuxt',
+    '@primevue/nuxt-module'
   ],
+
+  primevue:{
+    options:{
+      theme:{
+        preset:Aura,
+        options:{
+          darkModeSelector: false
+        }
+      }
+    }
+  },
 
   veeValidate:{
     autoImports: true,

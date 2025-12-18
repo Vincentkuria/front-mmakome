@@ -13,18 +13,18 @@
     <div
     ref="blogsscrollcontainer"
     class="ms-5 md:ms-20 mb-10 flex flex-row gap-10 overflow-x-scroll scrollbar scrollbar-thumb-secondary-2 scrollbar-track-blue-100">
-        <div v-for="item in 5">
-          <NuxtLink to="">
+        <div v-if="status!='success'">Loading....</div>
+        <div v-else v-for="blog in (data as any)?.data as Array<any>">
+          <NuxtLink :to="'/blogs/'+blog.id">
             <div class="w-80 m-5 h-80 bg-white  shadow-lg shadow-primary-300/50 hover:cursor-pointer">
-                <div class="h-[60%] w-full bg-green-400">
-                    <NuxtImg format="webp" alt="blog pic" src="blogsimg.jpg" class="h-full w-full object-cover object-center" />
-                </div>
-                <div class="p-3">
-                  <span class="font-mono">20 June 2025</span>
-                  <h2 class="w-full font-bold font-serif text-lg line-clamp-2">Legal Insights That Could Save You Thousands in Avoidable Disputes</h2>
-                </div>
-
-            </div>
+              <div class="h-[60%] w-full bg-white">
+                  <NuxtImg format="webp" alt="blog pic" :src="useRuntimeConfig().public.backendUrl+`/${blog.image}`" class="h-full w-full object-cover object-center" />
+              </div>
+              <div class="p-3">
+                <span class="font-mono">{{ simplifyDate(blog.createdAt) }}</span>
+                <h2 class="w-full font-bold font-serif text-lg line-clamp-2">{{ blog.title }}</h2>
+              </div>
+          </div>
           </NuxtLink>
         </div>
         
@@ -55,15 +55,11 @@ const scrollRight = () => {
   }
 }
 
+onMounted(()=>{
+  refresh()
+})
 
-// const {data,status}=await useFetch(useRuntimeConfig().public.directus.url+`/items/blog`,{
-//   method:'get',
-//   headers:{
-//     'Content-Type':'application/json',
-//   },
-//   query:{
-//     fields:'id,title,hero_img,date_created',
-//     limit:7
-//   }
-// })
+const {data,status,refresh}=useFetch(`${useRuntimeConfig().public.backendUrl}/blog/published`,{
+  method:"get",
+})
 </script>

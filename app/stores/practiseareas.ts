@@ -31,6 +31,11 @@ const practiseareas=[
     image:"/labour.png",
     title:"Employment, Labour & Regulatory Compliance",
     description:"We assist employers, executives and corporate clients with compliance audits, employment contracts, retrenchment and redundancy, unfair-dismissal defence, executive agreements and work-permit issues. The Kenyan legal-market emphasises the importance of embedding employment-law awareness into corporate governance and operations. By keeping abreast of regulatory change and case-law, we help you reduce labour-risk and maintain workplace compliance."
+  },
+  {
+    image:"/family.png",
+    title:"Probate, Succession and Family Law",
+    description:"we provide expert guidance in Probate, Succession, and Family Law, assisting clients through life’s most significant transitions. Our services include administering estates, validating wills, resolving inheritance disputes, and addressing sensitive family matters. We are committed to delivering clear, fair, and compassionate legal support, helping our clients navigate complex situations with confidence and peace of mind."
   }
 ]
 return {practiseareas}

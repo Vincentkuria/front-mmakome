@@ -11,20 +11,20 @@
     </div>
 
     <div
-    ref="blogsscrollcontainer"
+    ref="casesscrollcontainer"
     class="ms-5 md:ms-20 mb-10 flex flex-row gap-10 overflow-x-scroll scrollbar scrollbar-thumb-secondary-2 scrollbar-track-blue-100">
-        <div v-for="item in 5">
-          <NuxtLink to="">
+        <div v-if="status!='success'">Loading....</div>
+        <div v-else v-for="caseStudy in (data as any)?.data as Array<any>">
+          <NuxtLink :to="'/case-studies/'+caseStudy.id">
             <div class="w-80 m-5 h-80 bg-white  shadow-lg shadow-primary-300/50 hover:cursor-pointer">
-                <div class="h-[60%] w-full bg-green-400">
-                    <NuxtImg format="webp" alt="blog pic" src="casestudy.jpg" class="h-full w-full object-cover object-center" />
-                </div>
-                <div class="p-3">
-                  <span class="font-mono">20 June 2025</span>
-                  <h2 class="w-full font-bold font-serif text-lg line-clamp-2">Successful Debt Recovery for a Leading Microfinance Institution</h2>
-                </div>
-
-            </div>
+              <div class="h-[60%] w-full bg-white">
+                  <NuxtImg format="webp" alt="case pic" :src="useRuntimeConfig().public.backendUrl+`/${caseStudy.image}`" class="h-full w-full object-cover object-center" />
+              </div>
+              <div class="p-3">
+                <span class="font-mono">{{ simplifyDate(caseStudy.createdAt) }}</span>
+                <h2 class="w-full font-bold font-serif text-lg line-clamp-2">{{ caseStudy.title }}</h2>
+              </div>
+          </div>
           </NuxtLink>
         </div>
         
@@ -35,35 +35,31 @@
 <script lang="ts" setup>
 import { NuxtImg } from '#components';
 
-const blogsscrollcontainer = ref<HTMLElement | null>(null);
+const casesscrollcontainer = ref<HTMLElement | null>(null);
 const scrollAmount =200;
 
 const scrollLeft = () => {
-  if (blogsscrollcontainer.value) {
-    blogsscrollcontainer.value.scrollBy({
+  if (casesscrollcontainer.value) {
+    casesscrollcontainer.value.scrollBy({
       left: -scrollAmount,
       behavior: 'smooth'
     })
   }
 };
 const scrollRight = () => {
-  if (blogsscrollcontainer.value) {
-    blogsscrollcontainer.value.scrollBy({
+  if (casesscrollcontainer.value) {
+    casesscrollcontainer.value.scrollBy({
       left: scrollAmount,
       behavior: 'smooth'
     })
   }
 }
 
+onMounted(()=>{
+  refresh()
+})
 
-// const {data,status}=await useFetch(useRuntimeConfig().public.directus.url+`/items/blog`,{
-//   method:'get',
-//   headers:{
-//     'Content-Type':'application/json',
-//   },
-//   query:{
-//     fields:'id,title,hero_img,date_created',
-//     limit:7
-//   }
-// })
+const {data,status,refresh}=useFetch(`${useRuntimeConfig().public.backendUrl}/case/published`,{
+  method:"get",
+})
 </script>

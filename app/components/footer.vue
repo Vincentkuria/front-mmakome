@@ -24,7 +24,7 @@
       <p>
         <!-- TODO add real phone number -->
         <nuxt-link to="tel:">
-          <span>+2547-1234-5678</span>
+          <span>+2541-1664-2888</span>
         </nuxt-link>
         
         <br/><br/>
