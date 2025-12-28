@@ -47,7 +47,7 @@ export default defineNuxtConfig({
 
   runtimeConfig:{
     public:{
-      backendUrl: ''
+      backendUrl: '/backend'
     }
   }
   
