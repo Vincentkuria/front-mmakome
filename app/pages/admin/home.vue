@@ -418,6 +418,7 @@ const deleteMessage=async(id:number)=>{
         if(response.status==200){
           getMessagesData()
           openDrawer.value=false
+          openDrawer.value=null
         }
       }
     })
